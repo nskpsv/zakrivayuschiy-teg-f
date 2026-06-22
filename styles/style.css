@@ -15,9 +15,52 @@
   font-variation-settings: "wght" var(--primary-font-weight-normal, 410);
   background-image: var(
     --main-background,
-    repeating-linear-gradient(to right, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
-    repeating-linear-gradient(to bottom, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
+    repeating-linear-gradient(
+      to right,
+      #d3d3d3,
+      #d3d3d3 0.2rem,
+      transparent 0.2rem,
+      transparent 0.4rem
+    ),
+    repeating-linear-gradient(
+      to bottom,
+      #d3d3d3,
+      #d3d3d3 0.2rem,
+      transparent 0.2rem,
+      transparent 0.4rem
+    ),
     linear-gradient(to bottom, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a)
   );
   background-size: cover;
+  padding: 10rem 0;
+}
+
+.header {
+  container-type: inline-size;
+  font-family: var(--accent-font-family, "Press Start 2P"), sans-serif;
+  padding: 12.2rem 0;
+  margin: 0 auto 10rem;
+  background-color: var(--white, #fff);
+}
+
+.header__title,
+.header__subtitle {
+  line-height: 100%;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.header__title {
+  font-size: clamp(4.6rem, calc(3.05385rem + 4.9231cqw), 6.5rem);
+  margin-bottom: 2rem;
+}
+
+.header__subtitle {
+  font-size: clamp(1.4rem, calc(0.3615rem + 2.769cqw), 2.3rem);
+}
+
+@media (width >= 43.75em) {
+  .header {
+    padding: 13rem 0;
+  }
 }

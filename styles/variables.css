@@ -6,10 +6,20 @@
   --main-background: repeating-linear-gradient(
       to right,
       #d3d3d3,
-      #d3d3d3 2px,
-      transparent 2px,
-      transparent 4px
+      #d3d3d3 0.2rem,
+      transparent 0.2rem,
+      transparent 0.4rem
     ),
-    repeating-linear-gradient(to bottom, #d3d3d3, #d3d3d3 2px, transparent 2px, transparent 4px),
+    repeating-linear-gradient(
+      to bottom,
+      #d3d3d3,
+      #d3d3d3 0.2rem,
+      transparent 0.2rem,
+      transparent 0.4rem
+    ),
     linear-gradient(to bottom, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a);
+  --content-width: clamp(32rem, 100%, 70rem);
+
+  /* Colors */
+  --white: #fff;
 }
