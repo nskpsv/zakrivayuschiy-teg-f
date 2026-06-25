@@ -74,16 +74,17 @@
   padding: 0.4rem 1rem;
   font-family: var(--primary-font-family, "Inter");
   font-size: 18px;
-  line-height: 100%;
+  line-height: 120%;
   font-variation-settings: "wght" var(--primary-font-weight-bold, 715);
 }
 
 .card__image-container {
   position: relative;
   display: block;
+  margin: unset;
   border-top: var(--border-width) solid var(--border-color, #000);
   border-bottom: var(--border-width) solid var(--border-color, #000);
-  all: unset;
+  appearance: none;
 }
 
 .card__image-container,
@@ -105,11 +106,8 @@
   font-family: var(--accent-font-family, "Press Start 2P");
   font-size: 1.4rem;
   line-height: 100%;
-  text-shadow:
-    0.1rem 0 var(--white, #fff),
-    -0.1rem 0 var(--white, #fff),
-    0 0.1rem var(--white, #fff),
-    0 -0.1rem var(--white, #fff);
+  text-shadow: 0.1rem 0 var(--white, #fff), -0.1rem 0 var(--white, #fff),
+    0 0.1rem var(--white, #fff), 0 -0.1rem var(--white, #fff);
   mix-blend-mode: hard-light;
 }
 
@@ -169,16 +167,12 @@
   position: relative;
   border: var(--border-width) solid var(--border-color, #000);
   padding: 1.071rem 1.7rem;
+  outline: none;
   overflow: hidden;
-  color: var(--button-text-color, #000);
-  font-family: var(--accent-font-family, "Press Start 2P");
-  font-size: 1.4rem;
-  line-height: 90%;
-  text-align: center;
   background-color: var(--button-background-color, #fff);
   transition: box-shadow 0.3s ease;
   cursor: pointer;
-  all: unset;
+  appearance: none;
 }
 
 .button:focus-visible {
@@ -200,11 +194,21 @@
   transform: scaleX(1);
 }
 
+.button__text {
+  color: var(--button-text-color, #000);
+  font-family: var(--accent-font-family, "Press Start 2P");
+  font-size: 1.4rem;
+  line-height: 90%;
+  text-align: center;
+}
+
 .card__icon-button {
   border: var(--border-width) solid transparent;
+  outline: none;
+  background-color: var(--button-hover-color, #fff);
   transition: border-color 0.3s ease;
   cursor: pointer;
-  all: unset;
+  appearance: none;
 }
 
 .card__icon-button:focus-visible {
