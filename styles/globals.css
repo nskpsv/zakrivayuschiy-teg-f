@@ -55,3 +55,7 @@ ol {
 .content-width {
   inline-size: var(--content-width);
 }
+
+.border {
+  border: var(--border-width, 0.2rem) solid var(--border-color, #000);
+}

@@ -20,13 +20,10 @@
     linear-gradient(to bottom, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a)
   );
   background-size: cover;
+  background-attachment: fixed;
   min-inline-size: 320px;
   min-block-size: 100dvb;
   font-variation-settings: "wght" var(--primary-font-weight-normal, 410);
-}
-
-.page:has(.dialog[open]) {
-  overflow: hidden;
 }
 
 .header {
@@ -65,14 +62,12 @@
   display: flex;
   flex-direction: column;
   row-gap: var(--card-padding, 2.5rem);
-  border: var(--border-width, 0.2rem) solid var(--border-color, #000);
   padding-bottom: var(--card-padding, 2.5rem);
   background-color: var(--card-background-color, #fff);
 }
 
 .card__title {
   padding: 0.4rem 1rem;
-  font-family: var(--primary-font-family, "Inter");
   font-size: 18px;
   line-height: 120%;
   font-variation-settings: "wght" var(--primary-font-weight-bold, 715);
@@ -159,39 +154,16 @@
 .card__footer {
   display: flex;
   justify-content: flex-end;
-  gap: 1.2rem;
   padding: 0 var(--card-padding, 2.5rem);
 }
 
 .button {
-  position: relative;
-  border: var(--border-width) solid var(--border-color, #000);
-  padding: 1.071rem 1.7rem;
+  border: var(--border-width, 0.2rem) solid var(--border-color, #000);
   outline: none;
-  overflow: hidden;
   background-color: var(--button-background-color, #fff);
-  transition: box-shadow 0.3s ease;
   cursor: pointer;
   appearance: none;
-}
-
-.button:focus-visible {
-  box-shadow: 0.2rem 0.2rem 0 var(--button-shadow-color, #000);
-}
-
-.button::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 -0.1rem; /* -0.1rem для того, чтобы под ::before не появлялась полоса */
-  background-color: var(--button-hover-color, #fff);
-  transition: transform 0.5s ease-in-out;
-  transform: scaleX(0);
-  transform-origin: left;
-  mix-blend-mode: difference;
-}
-
-.button:hover::before {
-  transform: scaleX(1);
+  padding: 0;
 }
 
 .button__text {
@@ -203,12 +175,8 @@
 }
 
 .card__icon-button {
-  border: var(--border-width) solid transparent;
-  outline: none;
-  background-color: var(--button-hover-color, #fff);
+  border-color: transparent;
   transition: border-color 0.3s ease;
-  cursor: pointer;
-  appearance: none;
 }
 
 .card__icon-button:focus-visible {
@@ -219,8 +187,6 @@
   --contour-color: var(--black, #000);
   --hover-fill-color: var(--black, #000);
   --animation-fill-color: var(--red, #ff0000);
-  width: 2.7rem;
-  height: 2.4rem;
 }
 
 .like-icon .core {
@@ -283,14 +249,42 @@
   animation: sparkle 0.3s ease-in 0.3s;
 }
 
-.card__like-button {
-  min-inline-size: 13rem;
+.card__like-button,
+.save-button,
+.dialog__button {
+  position: relative;
+  padding: 1.071rem 1.7rem;
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
 }
 
-.footer {
-  display: flex;
-  justify-content: center;
-  padding: 5rem 0 0;
+.card__like-button:focus-visible,
+.save-button:focus-visible,
+.dialog__button:focus-visible {
+  box-shadow: 0.2rem 0.2rem 0 var(--button-shadow-color, #000);
+}
+
+.card__like-button::before,
+.save-button::before,
+.dialog__button::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 -0.1rem; /* -0.1rem для того, чтобы под ::before не появлялась полоса */
+  background-color: var(--button-hover-color, #fff);
+  transition: transform 0.5s ease-in-out;
+  transform: scaleX(0);
+  transform-origin: left;
+  mix-blend-mode: difference;
+}
+
+.card__like-button:hover::before,
+.save-button:hover::before,
+.dialog__button:hover::before {
+  transform: scaleX(1);
+}
+
+.card__like-button {
+  min-inline-size: 13rem;
 }
 
 .save-button {
@@ -299,18 +293,13 @@
   align-items: center;
   gap: 0.8rem;
   padding: 1.571rem 1.8rem;
+  margin: 5rem auto 0;
   background-color: var(--white, #fff);
-}
-
-.save-button__icon {
-  width: 2.8rem;
-  height: 2.8rem;
 }
 
 .dialog {
   width: fit-content;
   margin-inline: auto;
-  border: var(--border-width) solid var(--border-color, #000);
   padding: 2.8rem 3.8rem;
   max-inline-size: calc(100% - 3.4rem); /* минимум по 1.7rem слева/справа */
 }
