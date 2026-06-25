@@ -1,25 +1,47 @@
 :root {
+  /* Colors */
+  --white: #fff;
+  --black: #000;
+  --red: #ff0000;
+  --page-bg-grid-color: #d3d3d3;
+  --page-bg-gradient-start-color: #e7e7e7;
+  --page-bg-gradient-end-color: #1a1a1a;
+
+  --card-background-color: var(--white);
+  --page-header-background-color: var(--white);
+  --border-color: var(--black);
+  --card-label-stroke-color: var(--white);
+  --button-background-color: var(--white);
+  --button-shadow-color: var(--black);
+  --button-hover-color: var(--white);
+  --button-text-color: var(--black);
+
+  /**/
   --primary-font-family: "Inter";
   --accent-font-family: "Press Start 2P";
   --primary-font-weight-normal: 410;
   --primary-font-weight-bold: 715;
-  --main-background: repeating-linear-gradient(
+  --main-background:
+    repeating-linear-gradient(
       to right,
-      #d3d3d3,
-      #d3d3d3 0.2rem,
+      var(--page-bg-grid-color),
+      var(--page-bg-grid-color) 0.2rem,
       transparent 0.2rem,
       transparent 0.4rem
     ),
     repeating-linear-gradient(
       to bottom,
-      #d3d3d3,
-      #d3d3d3 0.2rem,
+      var(--page-bg-grid-color),
+      var(--page-bg-grid-color) 0.2rem,
       transparent 0.2rem,
       transparent 0.4rem
     ),
-    linear-gradient(to bottom, #e7e7e7 0%, #e7e7e7 0.01%, #1a1a1a);
+    linear-gradient(
+      to bottom,
+      var(--page-bg-gradient-start-color) 0%,
+      var(--page-bg-gradient-start-color) 0.01%,
+      var(--page-bg-gradient-end-color)
+    );
   --content-width: clamp(32rem, 100%, 70rem);
-
-  /* Colors */
-  --white: #fff;
+  --border-width: 0.2rem;
 }
